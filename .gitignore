@@ -1,0 +1,66 @@
+# =============================================================================
+# Git Ignore for Sen2SR RGBN 4x Super-Resolution
+# =============================================================================
+
+# Data & Large Caches (160+ GB)
+data/
+*.lmdb
+*.lock
+
+# Heavy Satellite GeoTIFFs & Imagery
+*.tif
+*.tiff
+*.jp2
+
+# Intermediate Checkpoints (multi-GB training runs)
+checkpoints/
+checkpoints_sen2sr/
+checkpoints_sen2sr_phase2/
+checkpoints_sen2sr_gan/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+
+# Production Weights & Verification
+!final-final-weights/
+!final-final-weights/final_weights.pth
+!final-final-weights/HOW_TO_USE.txt
+!final-final-weights/final_pipeline_verification.png
+final-final-weights/*_backup.pth
+
+# Training Outputs, TensorBoard Runs, Results
+outputs/
+results/
+results_sen2sr/
+results_sen2sr_phase2/
+results_sen2sr_gan/
+runs/
+*.log
+
+# Scratch, Testing & Temporary Files
+scratch_*.png
+*sr_comparison.png
+test.txt
+*.tmp
+
+# Python & Virtual Environments
+__pycache__/
+*.py[cod]
+*.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# IDE & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
